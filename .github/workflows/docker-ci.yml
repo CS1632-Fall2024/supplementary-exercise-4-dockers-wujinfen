@@ -40,6 +40,9 @@ jobs:
       - name: Launch Web Service
         run: docker compose up -d
 
+      - name: Set Web Server Synchronization Script Permissions
+        run: chmod +x wait-for-webserver.sh
+
       - name: Wait For Web Server Synchronization
         run: ./wait-for-webserver.sh
 
